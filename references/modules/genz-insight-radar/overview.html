@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>00后洞察雷达 Skill · genz-insight-radar</title>
+<style>
+  :root{--bg:#0f1117;--card:#1a1d27;--fg:#e8e8ee;--mut:#9aa0ad;--ac:#6c8cff;--bd:#2a2e3a;}
+  body{background:var(--bg);color:var(--fg);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:32px 20px;line-height:1.7}
+  h1{font-size:26px;margin:0 0 6px}
+  .sub{color:var(--mut);margin-bottom:24px}
+  .box{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px 20px;margin:16px 0}
+  .tag{display:inline-block;background:#222838;color:var(--ac);border:1px solid var(--bd);border-radius:999px;padding:3px 12px;font-size:13px;margin:3px 4px 3px 0}
+  code{background:#11141c;padding:2px 6px;border-radius:6px;font-size:13px;color:#cbd5ff}
+  a{color:var(--ac)}
+  details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 16px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600;color:var(--fg)}
+  pre{background:#0b0d13;padding:14px;border-radius:8px;overflow:auto;font-size:12.5px;color:#c7d0e0;white-space:pre-wrap}
+  .foot{color:var(--mut);font-size:13px;margin-top:28px;border-top:1px solid var(--bd);padding-top:16px}
+</style>
+</head>
+<body>
+<h1>00后洞察雷达 · genz-insight-radar</h1>
+<div class="sub">跨平台采集小红书 / 抖音 / 微博 / B站 的00后热门话题，输出带数据与信息源支撑的五大洞察 + 品牌营销建议。</div>
+
+<div class="box">
+<b>📦 下载安装</b>
+<p>本 skill 的可安装包为 <code>genz-insight-radar.zip</code>（即 <code>.skill</code> 压缩包），已放在你的工作区根目录。下载后放在 <code>~/.codebuddy/skills/</code> 并解压即可使用。</p>
+</div>
+
+<div class="box">
+<b>🎯 它能做什么</b><br>
+<span class="tag">小红书站内采集（需本人登录）</span>
+<span class="tag">抖音/微博/B站热榜</span>
+<span class="tag">平台交叉分析</span>
+<span class="tag">五大洞察表</span>
+<span class="tag">营销建议总结</span>
+<span class="tag">只读安全约束</span>
+<span class="tag">本人账号授权</span>
+</div>
+
+<div class="box">
+<b>⚙️ 安全边界（已写进 skill）</b>
+<ul>
+<li><b>只读</b>：登录态仅用于查询，严禁发布/评论/点赞等一切写操作。</li>
+<li><b>本人账号</b>：每位使用者必须扫码登录自己的小红书账号，不复用他人登录态，分享时不含 cookies。</li>
+</ul>
+</div>
+
+<details><summary>📄 SKILL.md（完整源码）</summary><pre id="skill"></pre></details>
+<details><summary>📄 references/platform-playbook.md（平台采集手册）</summary><pre id="playbook"></pre></details>
+<details><summary>📄 references/report-template.md（报告模板）</summary><pre id="template"></pre></details>
+
+<div class="foot">由 WorkBuddy 生成 · 2026-08-06 · genz-insight-radar v2</div>
+
+<script>
+async function load(id,path){try{const r=await fetch(path);const t=await r.text();document.getElementById(id).textContent=t;}catch(e){document.getElementById(id).textContent="（无法加载："+path+"）";}}
+load('skill','skill_source/SKILL.md');
+load('playbook','skill_source/references/platform-playbook.md');
+load('template','skill_source/references/report-template.md');
+</script>
+</body>
+</html>

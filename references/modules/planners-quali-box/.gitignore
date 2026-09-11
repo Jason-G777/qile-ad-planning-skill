@@ -1,0 +1,32 @@
+# Internal and client materials
+_internal/
+work/
+output/
+outputs/
+deliverable/
+dist/
+build/
+
+# Real social-media data and user identifiers: do not publish.
+# The explicitly named synthetic fixtures below are safe to distribute.
+evals/datasets/*
+!evals/datasets/README.md
+!evals/datasets/synthetic_*.csv
+
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+*.token
+
+# Caches and local runtime files
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+*.log
+*.tmp
+.DS_Store
