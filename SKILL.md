@@ -36,7 +36,7 @@ description: 中文广告策略与文案创意协作 Skill。用于 Brief 拆解
 | Slogan、Campaign 主题、TVC、Manifesto、KV Copy | 创意路线 | `references/campaign-mechanism-library.md` |
 | 消费者/品类/人群洞察 | 证据→解释→洞察 | 符合许可条件时可读 `references/modules/songyue-insight/SKILL.md` |
 | 00后、05后、Z 世代、大学生、年轻人趋势 | 年轻人洞察雷达 | `references/modules/genz-insight-radar/SKILL.md` |
-| 全网调研、平台搜索、网页/链接阅读、视频/播客字幕 | 联网取证 | `references/modules/agent-reach/SKILL.md`；先检查当前电脑可用后端 |
+| 全网调研、平台搜索、网页/链接阅读、视频/播客字幕 | 联网取证 | 先读 `references/agent-reach-runtime-setup.md` 并完成首次预检，再按 `references/modules/agent-reach/SKILL.md` 路由 |
 | 成批评论、访谈、开放题、搜索词、社媒语料 | 定性研究 | `references/modules/planners-quali-box/SKILL.md` |
 | 方案诊断、批评、修改、对比 | 诊断路线 | 符合许可条件时可读 `references/modules/songyue-marketingdx/SKILL.md` |
 | 达人种草、媒介整合、OTV/长短内容联动 | 内容与媒介接力 | `references/identity-and-working-standard.md` 中的达人、媒介与转化规则 |
@@ -45,8 +45,17 @@ description: 中文广告策略与文案创意协作 Skill。用于 Brief 拆解
 
 - `songyue-insight` 与 `songyue-marketingdx` 为 CC BY-NC-SA 4.0，商业使用需原作者书面授权。未确认授权时，商业客户项目不加载这两个模块，改用本 Skill 的基础洞察/诊断流程。
 - `planners-quali-box` 为 AGPL-3.0，可商业使用，但修改、分发或通过网络提供修改版时需履行开源义务。
-- `agent-reach` 为 MIT 许可。使用前先运行 `agent-reach doctor --json`；若当前电脑没有 Agent Reach 运行组件，使用 WorkBuddy 已有的只读浏览器/搜索能力完成任务，并明确说明未启用哪些平台后端。
+- `agent-reach` 为 MIT 许可。包内的路由文档不等于本机已安装 Agent Reach CLI。新电脑、首次调用或运行状态未知时，按下面的 Codex 运行门处理；不要把 CLI 缺失误报为“没有 Conda 后端”，Agent Reach 不强制依赖 Conda。
 - 来源、许可和修改说明见 `THIRD-PARTY-NOTICES.md`。不要删除各模块原始 LICENSE/NOTICE。
+
+### Agent Reach 的 Codex 运行门
+
+1. 首次调用或环境状态未知时，读取 `references/agent-reach-runtime-setup.md`，使用当前可用的 Python 运行 `scripts/agent_reach_preflight.py`。macOS/Linux 优先 `python3`，Windows 优先 `py -3`。同一会话已经确认状态后不重复体检。
+2. 预检返回 `ready` 时，再按 Agent Reach 模块的路由和对应平台 reference 工作。`doctor` 的 `active_backend: null` 不自动等于未安装；只对当前任务需要的平台做只读实测。
+3. 返回 `runtime_missing` 时，准确说明“Skill 路由已安装，但 Agent Reach CLI 未安装”。若用户明确要求安装/修复，按参考文件执行；安装包、写入用户目录、修改 PATH 或使用 `--system` 前遵循 Codex 的权限确认，不静默改变电脑。
+4. 返回 `path_not_visible` 时，优先使用预检发现的现有可执行文件，并提示用户重启 Codex 以刷新 PATH；不要重复安装第二份运行时。
+5. 用户只是要求完成调研、且 Codex 现有只读网页/浏览器工具足以覆盖时，直接安全降级继续任务，不要求用户先修环境。只有小红书登录态、平台搜索、字幕等专用能力确实缺失时，才说明缺少哪一个渠道。
+6. 不读取、打包或上传用户 Cookie、Token、账号密码。需要登录的平台按 Agent Reach 的平台说明由用户控制登录态，优先建议专用账号。
 
 ## 基础策略流程
 

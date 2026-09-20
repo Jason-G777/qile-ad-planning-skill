@@ -13,6 +13,12 @@
 
 默认用中文，先给一个认真打磨的方向；需要发散时再展开。保留已经确认的内容，修改时不反复推倒重来。
 
+## 安装到 Codex
+
+可让 Codex 使用 `$skill-installer` 从本仓库安装，或把仓库文件夹放入用户级 Skills 目录。Codex 若没有立即识别新 Skill，重启应用。
+
+需要联网调研时，Skill 会先运行只读预检，区分 Agent Reach CLI、PATH 与具体平台后端。Agent Reach 不要求 Conda；安装 Skill 本身也不会静默安装外部命令或携带任何登录态。修复流程见 [Agent Reach 在 Codex 中的运行时检查与修复](references/agent-reach-runtime-setup.md)。
+
 ## 安装到 WorkBuddy
 
 下载仓库中的 `ad-planning-copilot-cn.workbuddy.zip`，在 WorkBuddy 的“添加技能 → 上传技能”中导入。新建对话，直接提交策划需求即可，也可点名调用 `ad-planning-copilot-cn`。
