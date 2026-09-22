@@ -37,7 +37,18 @@
 - 原始许可：`references/modules/agent-reach/LICENSE`
 - 本包只集成 Skill 路由文档，不携带用户 Cookie、API Key、浏览器登录态或跨平台命令行组件。
 
+## humanizer
+
+- 作者：Siqi Chen
+- 项目：https://github.com/blader/humanizer
+- 集成版本：2.7.0
+- 许可：MIT
+- 商业使用：允许
+- 原始许可与说明：`references/modules/humanizer/LICENSE` 和 `references/modules/humanizer/README.md`
+- 本整合包保留原始Skill全文，在主入口增加广告策划场景的调用边界；不改变原项目归属或许可。
+
 ## 聚合包修改说明
 
 - 2026-09-11：将上述模块作为独立参考组件集成到 `ad-planning-copilot-cn`；新增统一任务路由、身份设定、案例机制库和 WorkBuddy 本地安装说明。同日增加 Agent Reach 联网调研路由及 MIT 许可文件。
+- 2026-09-22：新增 Humanizer 2.7.0，用于文案去AI味、声音校准与二次语言质检；主入口增加广告场景适配，避免语言清理覆盖策略、事实与有意的品牌表达。
 - 未删除各第三方模块的原始归属、许可或声明。
